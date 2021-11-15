@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Task 2</title>
+        <style>
+            .circle {
+                width: 100px;
+                height: 100px;
+                margin: 10px;
+                border-radius: 50%;
+                display: inline-block;
+            }
+
+            #top {
+                height: 45vh;
+            }
+
+            #bottom {
+                height: 40vh;
+            }
+
+            h1 {
+                text-align: center;
+                color: #1a237e;
+                font-family: Tahoma;
+                text-decoration: underline;
+            }
+
+            .redcolor {
+                background-color: red;
+            }
+
+            .yellowcolor {
+                background-color: yellow;
+            }
+
+            .bluecolor {
+                background-color: blue;
+            }
+        </style>
+        <script src="jq.js"></script>
+        <script>
+            $(function () {
+
+                $("div:first").children("div").on("click", function () {
+                    $("div:first").append($(this).clone());
+                }); // end of onclick
+
+
+                $("#bottom").children("div").on("click", function () {
+                    $("#bottom").append($(this).clone(true));
+                }); // end of onclick
+                
+            }); // end of load
+        </script>
+    </head>
+    <body>
+        <div id="top">
+            <h1>Clone Without Events</h1>
+            <div class="circle redcolor"></div>
+            <div class="circle yellowcolor"></div>
+            <div class="circle bluecolor"></div>
+        </div>
+        <hr/>
+        <div id="bottom">
+            <h1>Clone With Events</h1>
+            <div class="circle redcolor"></div>
+            <div class="circle yellowcolor"></div>
+            <div class="circle bluecolor"></div>
+        </div>
+    </body>
+</html>
